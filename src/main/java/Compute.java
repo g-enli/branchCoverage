@@ -6,15 +6,15 @@ public class Compute {
   }
 
   public int countNumberOfOccurrences(String e) {
-    if (mq.size() == 0) {
+    if (mq.size() == 0) {//mockla
       return -1;
     }
     if (!mq.contains(e)) {
       return 0;
     }
     int counter = 0;
-    for (int i = 0; i < mq.size(); i++) {
-      if (e.equals(mq.getAt(i))) {
+    for (int i = 0; i < mq.size(); i++) {//mockla
+      if (e.equals(mq.getAt(i))) {//mockla
         counter++;
       }
     }

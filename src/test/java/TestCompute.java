@@ -9,9 +9,19 @@ public class TestCompute {
   Compute c;
 
   @Test
-  public void example() {
+  public void testConstructor() {
     MessageQueue mq = mock(MessageQueue.class);
     c = new Compute(mq);
     assertTrue(true);
   }
+  
+  @Test
+  public void testSize_0() {
+    MessageQueue mq = mock(MessageQueue.class);
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(0);
+    assertEquals(-1,c.countNumberOfOccurrences(""));
+  }
+  
+  
 }
