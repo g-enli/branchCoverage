@@ -13,4 +13,10 @@ public class TestUtil {
 
   @Test
   public void example() { assertTrue(true); }
+  
+  @Test
+  public void testArgsLength_1(){
+  assertFalse(c.compute(4));//array length 1
+  }
+  
 }
