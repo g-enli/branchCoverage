@@ -24,16 +24,20 @@ public class TestUtil {
   assertFalse(c.compute(4,1));//2 tane elemanlı args arrayi
   }
   
-  @Test
+  @Test(expected = RuntimeException.class)//exception beklenen durum
   public void testOneArg_0(){
-   try {
-  	    c.compute(0,1,3);//length 1 değil, even değil üst iflere takılmadan arg=0dan exception at
-            // Eğer buraya kadar hata oluşmadıysa test başarısız olmalı
-            fail("Bir RuntimeException bekleniyordu, ancak hiçbir exception fırlatılmadı.");
-        } catch (RuntimeException e) {
-            // Beklenen exception'ı aldık, test başarılı
-        }
+   
+	c.compute(0,1,3);//length 1 değil, even değil üst iflere takılmadan* arg=0dan exception at
+	// Eğer buraya kadar hata oluşmadıysa test başarısız olmalı
+	fail("Bir RuntimeException bekleniyordu, ancak hiçbir exception fırlatılmadı.");
+       
   }
-  
-  
+  @Test
+  public void testSumDivibleByOneArg(){
+  assertTrue(c.compute(3,3,3));//*
+  }
+  @Test
+  public void testSumNonDivibleArgs(){
+  assertFalse(c.compute(13,11,7));//*
+  }
 }
