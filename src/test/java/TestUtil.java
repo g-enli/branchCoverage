@@ -18,5 +18,10 @@ public class TestUtil {
   public void testArgsLength_1(){
   assertFalse(c.compute(4));//array length 1
   }
+   
+  @Test
+  public void testArgsLengthEven(){
+  assertFalse(c.compute(4,1));//2 tane elemanlı args arrayi
+  }
   
 }
