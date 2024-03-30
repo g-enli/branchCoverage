@@ -23,5 +23,14 @@ public class TestCompute {
     assertEquals(-1,c.countNumberOfOccurrences(""));
   }
   
+  @Test
+  public void testDontContainString() {
+    MessageQueue mq = mock(MessageQueue.class);
+    c = new Compute(mq);
+    when(mq.size()).thenReturn(1);//size=0'a takılmasın
+    String e = anyString();
+    when(mq.contains(e)).thenReturn(false);
+    assertEquals(0,c.countNumberOfOccurrences(e));//0 bekliyorum 0 geldi olmalı
+  }
   
 }
